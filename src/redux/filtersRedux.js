@@ -61,7 +61,7 @@ export default function reducer(statePart = [], action = {}) {
       console.log(statePart.tags);
       return {
         ...statePart,
-        tags: statePart.tags.filters(tag => tag !== action.payload),
+        tags: statePart.tags.filter(tag => tag !== action.payload),
       };
     default:
       return statePart;

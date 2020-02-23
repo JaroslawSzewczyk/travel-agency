@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './OrderOption.scss';
 import ProtoTypes from 'prop-types';
-import formatPrice from '../../../utils/formatPrice';
+import { formatPrice } from '../../../utils/formatPrice';
 
 const OrderOptionDropdown = ({values, required, currentValue, setOptionValue}) => (
   <select
@@ -12,9 +12,6 @@ const OrderOptionDropdown = ({values, required, currentValue, setOptionValue}) =
     {required ? '' : (
       <option key='null' value=''>---</option>
     )}
-    {values.map(value => (
-      console.log(value.price)
-    ))}
     {values.map(value => (
       <option key={value.id} value={value.id}>{value.name}({formatPrice(value.price)})</option>
     ))}

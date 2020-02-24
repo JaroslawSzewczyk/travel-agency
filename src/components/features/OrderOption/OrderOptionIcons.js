@@ -4,11 +4,13 @@ import ProtoTypes from 'prop-types';
 import Icon from '../../common/Icon/Icon';
 import { formatPrice } from '../../../utils/formatPrice';
 
-const OrderOptionIcon = ({values, setOptionValue, currentValue}) => (
+const OrderOptionIcon = ({ values, setOptionValue, currentValue, required }) => (
   <div className={styles.icon}>
-    {/* {values.map(value => (
-      console.log('value',value)
-    ))} */}
+    {!required ? '' : (
+      <div onClick={() => setOptionValue('')}>
+        <Icon name='times-circle'/>
+        none</div>
+    )}
     {values.map(value => (
       <div className={styles.icon + (currentValue === value.id ? ' ' + styles.iconActive : '')}
         key={value.id}

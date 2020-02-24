@@ -14,7 +14,7 @@ class OrderForm extends React.Component {
   }
 
   render() {
-    const { tripCost, options,setOrderOption } = this.props;
+    const { tripCost, options, setOrderOption } = this.props;
     return (
       <Row>
         {pricing.map(price => (

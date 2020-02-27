@@ -5,9 +5,9 @@ import Icon from '../../common/Icon/Icon';
 import { formatPrice } from '../../../utils/formatPrice';
 
 const OrderOptionIcon = ({ values, setOptionValue, currentValue, required }) => (
-  <div className={styles.icon}>
+  <div className={styles.component}>
     {!required ? '' : (
-      <div onClick={() => setOptionValue('')}>
+      <div className={styles.icon} onClick={() => setOptionValue('')}>
         <Icon name='times-circle'/>
         none</div>
     )}

@@ -5,28 +5,18 @@ import ProtoTypes from 'prop-types';
 
 class OrderOptionDate extends React.Component{
 
-  state = {
-    startDate: new Date(),
-  };
-
   static propTypes = {
-    value: ProtoTypes.any,
     currentValue: ProtoTypes.any,
-    id: ProtoTypes.any,
     setOptionValue: ProtoTypes.func,
   }
 
-  handleChange = date => {
-    this.setState({
-      startDate: date,
-    });
-  }
   render() {
-    const {setOptionValue} = this.props;
+    const { setOptionValue, currentValue } = this.props;
+
     return (
       <div>
         <DatePicker
-          selected={this.state.startDate}
+          selected={currentValue}
           onChange={setOptionValue} />
       </div>
     );

@@ -53,6 +53,5 @@ describe('Component TripSummary', () => {
   it('should crash if tags is false', () => {
     const component = shallow(<TripSummary tags={[]} />);
     expect(component.find('.tags')).toBeTruthy();
-    console.log(component.debug());
   });
 });

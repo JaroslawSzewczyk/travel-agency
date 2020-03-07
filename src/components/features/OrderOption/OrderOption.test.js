@@ -23,7 +23,7 @@ describe('Component OrderOption', () => {
 
 const optionTypes = {
   dropdown: 'OrderOptionDropdown',
-  //icons: 'OrderOptionIcons',
+  //  icons: 'OrderOptionIcons',
   checkboxes: 'OrderOptionCheckboxes',
   number: 'OrderOptionNumber',
   text: 'OrderOptionText',
@@ -85,6 +85,7 @@ for(let type in optionTypes){
     it(`renders ${optionTypes[type]}`, () => {
       expect(subcomponent).toBeTruthy();
       expect(subcomponent.length).toBe(1);
+      console.log(optionTypes[type]);
     });
 
     /* type-specific tests */

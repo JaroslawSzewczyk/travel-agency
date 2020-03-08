@@ -4,7 +4,7 @@ import ProtoTypes from 'prop-types';
 import Icon from '../../common/Icon/Icon';
 import { formatPrice } from '../../../utils/formatPrice';
 
-const OrderOptionIcon = ({ values, setOptionValue, currentValue, required }) => (
+const OrderOptionIcons = ({ values, setOptionValue, currentValue, required }) => (
   <div className={styles.component}>
     {!required ? '' : (
       <div className={styles.icon} onClick={() => setOptionValue('')}>
@@ -22,11 +22,11 @@ const OrderOptionIcon = ({ values, setOptionValue, currentValue, required }) => 
   </div>
 );
 
-OrderOptionIcon.propTypes = {
+OrderOptionIcons.propTypes = {
   values: ProtoTypes.array,
   setOptionValue: ProtoTypes.any,
   required: ProtoTypes.any,
   currentValue: ProtoTypes.node,
 };
 
-export default OrderOptionIcon;
+export default OrderOptionIcons;

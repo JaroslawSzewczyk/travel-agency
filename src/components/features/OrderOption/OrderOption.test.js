@@ -23,7 +23,7 @@ describe('Component OrderOption', () => {
 
 const optionTypes = {
   dropdown: 'OrderOptionDropdown',
-  //  icons: 'OrderOptionIcons',
+  icons: 'OrderOptionIcons',
   checkboxes: 'OrderOptionCheckboxes',
   number: 'OrderOptionNumber',
   text: 'OrderOptionText',
@@ -84,8 +84,7 @@ for(let type in optionTypes){
     /* common tests */
     it(`renders ${optionTypes[type]}`, () => {
       expect(subcomponent).toBeTruthy();
-      expect(subcomponent.length).toBe(1);
-      console.log(optionTypes[type]);
+      expect(renderedSubcomponent.length).toBe(1);
     });
 
     /* type-specific tests */
@@ -187,6 +186,18 @@ for(let type in optionTypes){
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
         break;
+      }
+      case 'icons': {
+        it('contains div', () => {
+          const div = renderedSubcomponent.find('div');
+          expect(div.length).toBe(3);
+        });
+
+        it('should run setOrderOption function on change', () => {
+          renderedSubcomponent.find('.icon').at(1).simulate('change');
+        });
+        break;
+
       }
     }
   });

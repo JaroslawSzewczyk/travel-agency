@@ -68,9 +68,7 @@ class OrderForm extends React.Component {
         ))}
         <Col xs={12}>
           <OrderSummary tripCost={tripCost} options={options} />
-          {console.log(options)}
         </Col>
-
         <Button onClick={() => sendOrder(options, tripCost, countryName, countryCode, countryId)}>Order now!</Button>
       </Row>
     );
